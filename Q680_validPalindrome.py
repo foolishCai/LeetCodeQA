@@ -1,0 +1,27 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Time    : 2020/5/19 09:29
+# @Author  : cai
+# @contact : yuwei.chen@yunzhenxin.com
+# @File    : Q680_validPalindrome.py
+# @Note    : https://leetcode-cn.com/problems/valid-palindrome-ii/
+
+class Solution:
+    def validPalindrome(self, s: str) -> bool:
+        def checkPalindrome(low, high):
+            i, j = low, high
+            while i < j:
+                if s[i] != s[j]:
+                    return False
+                i += 1
+                j -= 1
+            return True
+
+        low, high = 0, len(s) - 1
+        while low < high:
+            if s[low] == s[high]:
+                low += 1
+                high -= 1
+            else:
+                return checkPalindrome(low + 1, high) or checkPalindrome(low, high - 1)
+        return True
