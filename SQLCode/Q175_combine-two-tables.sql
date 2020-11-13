@@ -6,28 +6,28 @@
 # @File    : Q175.sql
 # @Note    : https://leetcode-cn.com/problems/combine-two-tables/
 
-"""
-Person
-+-------------+---------+
-| 列名         | 类型     |
-+-------------+---------+
-| PersonId    | int     |
-| FirstName   | varchar |
-| LastName    | varchar |
-+-------------+---------+
-PersonId 是上表主键
 
-Address
-+-------------+---------+
-| 列名         | 类型    |
-+-------------+---------+
-| AddressId   | int     |
-| PersonId    | int     |
-| City        | varchar |
-| State       | varchar |
-+-------------+---------+
-AddressId 是上表主键
-"""
+--    Person
+--    +-------------+---------+
+--    | 列名         | 类型     |
+--    +-------------+---------+
+--    | PersonId    | int     |
+--    | FirstName   | varchar |
+--    | LastName    | varchar |
+--    +-------------+---------+
+--    PersonId 是上表主键
+--
+--    Address
+--    +-------------+---------+
+--    | 列名         | 类型    |
+--    +-------------+---------+
+--    | AddressId   | int     |
+--    | PersonId    | int     |
+--    | City        | varchar |
+--    | State       | varchar |
+--    +-------------+---------+
+--    AddressId 是上表主键
+
 
 select a.PersonId, a.FirstName, a.LastName, b.City, b.State
 from Person a

@@ -5,16 +5,16 @@
 # @File    : Q176_second-highest-salary.sql
 # @Note    : https://leetcode-cn.com/problems/second-highest-salary/
 
-"""
-Employee
-+----+--------+
-| Id | Salary |
-+----+--------+
-| 1  | 100    |
-| 2  | 200    |
-| 3  | 300    |
-+----+--------+
-"""
+
+--    Employee
+--    +----+--------+
+--    | Id | Salary |
+--    +----+--------+
+--    | 1  | 100    |
+--    | 2  | 200    |
+--    | 3  | 300    |
+--    +----+--------+
+
 select if(t.Salary is not null, t.Salary, null) as SecondHighestSalary
 from(
     select Salary, row_number() over(partition by Salary order by Salary desc) as rn
